@@ -30,7 +30,7 @@ const generateIndexImport = (indexFile: string, name: string): Promise<void> => 
  return new Promise((resolve, reject) => {
   let data = readFile(indexFile);
   const lastColon = data.lastIndexOf(';');
-  const importStatement = `;\nimport ${name} from './${name}';`;
+  const importStatement = `;\nimport ${name} from './${name}/${name}';`;
 
   // Add the import statement after the semicolon
   fs.readFile(indexFile, (err, data) => {
@@ -70,9 +70,17 @@ const generateIndexExport = (indexFile: string, name: string): Promise<void> => 
 const generateComponent = async (template: string, name: string) => {
  const cwd: string = process.cwd();
  const extension = (template == 'javascript')? 'jsx': 'tsx';
- const component = `./components/${name}.${extension}`;
+ const component = `./components/${name}/${name}.${extension}`;
+ const componentFolder = `./components/${name}/`;
 
  if (!fs.existsSync(component)) {
+  if (!fs.existsSync(componentFolder)) {
+   fs.mkdir(componentFolder, (err) => {
+    if (err) logRed(err.message);
+    logGreen(`${name} folder has been created at: ${path.resolve(cwd, './component')}`);
+   });
+  }
+
   fs.appendFile(component, await getComponentTemplate(template, name), 'utf-8', (err) => {
    if (err) logRed(err.message);
    logGreen(`Component has been generated at: ${path.resolve(cwd, component)}`);
@@ -147,10 +155,6 @@ class Component {
  }
 
  private createFolder() {
-
- }
-
- private getTemplate(type: string) {
 
  }
 }

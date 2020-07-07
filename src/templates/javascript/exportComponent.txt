@@ -1,4 +1,4 @@
-import EXAMPLE from 'EXAMPLE';
+import EXAMPLE from './EXAMPLE/EXAMPLE';
 
 export {
 EXAMPLE,

@@ -62,7 +62,8 @@ const promptForMissingOptions = async (options: IOptions): Promise<IOptions> => 
   type: 'list',
   name: 'template',
   message : 'Please select the desired code template',
-  choices: ['Javascript', 'Typescript'],
+  // , 'Typescript'
+  choices: ['Javascript'],
   default: defaultTemplate,
  });
 
@@ -70,7 +71,8 @@ const promptForMissingOptions = async (options: IOptions): Promise<IOptions> => 
   type: 'list',
   name: 'element',
   message : 'Please select the desired react element to generate',
-  choices: ['Component', 'Service', 'Page'],
+  // , 'Service', 'Page'
+  choices: ['Component'],
   default: defaultElement,
  });
 

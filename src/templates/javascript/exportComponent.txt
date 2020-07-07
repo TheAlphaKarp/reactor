@@ -1,0 +1,5 @@
+import EXAMPLE from 'EXAMPLE';
+
+export {
+EXAMPLE,
+}

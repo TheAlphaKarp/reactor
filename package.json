@@ -1,10 +1,10 @@
 {
-  "name": "reactor",
-  "version": "1.0.0",
+  "name": "reactor-thealphakarp",
+  "version": "1.0.2",
   "description": "Reactor is a CLI tool that automatically generates react code when used.",
   "main": "dist/main.js",
   "bin": {
-    "reactor": "dist/bin/reactor.js"
+    "rg": "./dist/bin/reactor.js"
   },
   "publishConfig": {
     "access": "public"
@@ -14,7 +14,6 @@
     "link": "npm link --force",
     "reactor": "reactor",
     "copy": "cross-env ncp ./src/templates ./dist/templates",
-    "install": "npm run build && npm run copy && npm run link",
     "full": "npm run build && npm run copy && npm run link && reactor"
   },
   "keywords": [

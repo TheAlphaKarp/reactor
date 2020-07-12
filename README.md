@@ -6,9 +6,7 @@ Reactor cli is a development tool to quickly generate react components for your 
 
 - clone the repo.
 
-> npm install
-
-> npm run install 
+> npm install reactor-thealphakarp -g
 
 This wil provide you with a linked "reactor command".
 
@@ -17,7 +15,7 @@ This wil provide you with a linked "reactor command".
 Reactor will always generate the components folder in the current working directory. 
 To use reactor simply use the following command.
 
-> reactor          
+> rg         
 
 ## Planned features
 

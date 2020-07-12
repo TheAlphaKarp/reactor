@@ -2,6 +2,7 @@
 
 import cli, { IOptions } from '../cli';
 import { createComponent, createPage, createService } from '../core/reactor';
+import Component from '../core/reactor/createComponent';
 
 
 (async () => {
@@ -9,7 +10,7 @@ import { createComponent, createPage, createService } from '../core/reactor';
 
  switch (options.element) {
   case 'component':
-   await createComponent(options.template, options.name);
+   new Component(options.template, options.name);
    break;
   case 'page':
    await createPage(options.template, options.name);
@@ -18,6 +19,6 @@ import { createComponent, createPage, createService } from '../core/reactor';
    await createService(options.template, options.name);
    break;
   default:
-   await createComponent(options.template, options.name);
+   new Component(options.template, options.name);
  }
 })();
